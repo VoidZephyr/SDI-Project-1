@@ -1,4 +1,5 @@
 // SDIProject1.js
+//push from the mac
 
 // Search function to fetch artwork based on a search term
     async function searchArtwork() {
