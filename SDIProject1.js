@@ -35,7 +35,11 @@ async function displayArtwork(ids) {
     }
 }
 
+
+
 // Add event listener for search button
+//https://www.w3schools.com/jsref/met_element_addeventlistener.asp
+
 document.getElementById('search-button').addEventListener('click', function() {
     const searchInput = document.getElementById('search-input').value;
     if (searchInput) {
