@@ -2,7 +2,8 @@
 //push from the mac
 
 // Search function to fetch artwork based on a search term
-    async function searchArtwork() {
+// FETCH BASICS -> https://youtu.be/cuEtnrL9-H0?si=ba7cBmDr7AAeon3r   
+async function searchArtwork() {
         const response = await fetch(`https://collectionapi.metmuseum.org/public/collection/v1/search?q=${query}`);
         const data = await response.json();
 
