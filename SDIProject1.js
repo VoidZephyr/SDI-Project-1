@@ -1,14 +1,15 @@
 // SDIProject1.js
 
 // Search function to fetch artwork based on a search term
-async function searchArtwork(query) {
-    const response = await fetch(`https://collectionapi.metmuseum.org/public/collection/v1/search?q=${query}`);
-    const data = await response.json();
+    async function searchArtwork() {
+        const response = await fetch(`https://collectionapi.metmuseum.org/public/collection/v1/search?q=${query}`);
+        const data = await response.json();
+
 
     if (data.objectIDs) {
         displayArtwork(data.objectIDs.slice(0, 5)); // Display the first 5 search results like the first website we made
     } else {
-        alert("No artwork found. Please try a different search term."); //if it isn't a word then throw an error
+        alert("Try another word"); //if it isn't a word then throw an error
     }
 }
 
