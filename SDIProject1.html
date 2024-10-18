@@ -3,9 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Metropolitan Museum API</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <header>
+        <h1>Welcome to the Met Museum API Viewer</h1>
+        <!--this is where a search bar would go-->
+        <div id="search-bar">
+            <input type="text" id="search-input" placeholder="Search for artwork...">
+            <button id="search-button">Search</button>
+        </div>
+    </header>
     
+    <main>
+        <section id="data-section">
+            <h2>Art Collection</h2>
+            <div id="artwork-list"></div>
+        </section>
+    </main>
+
+    <script src="SDIProject1.js"></script>
 </body>
 </html>
