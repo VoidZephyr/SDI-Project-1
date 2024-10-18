@@ -2,37 +2,43 @@
 //push from the mac
 
 // Search function to fetch artwork based on a search term
-// FETCH BASICS -> https://youtu.be/cuEtnrL9-H0?si=ba7cBmDr7AAeon3r   
-async function searchArtwork() {
+// FETCH BASICS -> https://youtu.be/cuEtnrL9-H0?si=ba7cBmDr7AAeon3r  
+// example of query request from the Art website https://collectionapi.metmuseum.org/public/collection/v1/search?q=sunflowers
+//change sunflowers to whatever input to the function to be able to serach the key word.  
+async function searchArtwork(query) {
         const response = await fetch(`https://collectionapi.metmuseum.org/public/collection/v1/search?q=${query}`);
         const data = await response.json();
 
 
-    if (data.objectIDs) {
-        displayArtwork(data.objectIDs.slice(0, 5)); // Display the first 5 search results like the first website we made
-    } else {
-        alert("Try another word"); //if it isn't a word then throw an error
-    }
+if (data.objectIDs) {
+    displayArtwork(data.objectIDs.slice(0, 5)); // Display the first 5 search results like the first website we made
+} else {
+    alert("Try another word"); //if it isn't a word then throw an error
+}
 }
 
+
+//https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
 async function displayArtwork(ids) {
     const artworkList = document.getElementById('artwork-list');
-    artworkList.innerHTML = '';  // Clear the current list before adding new results
+    artworkList.innerHTML = ''; 
+
+//For a list of department IDs, refer to our /departments endpoint:
+//https://collectionapi.metmuseum.org/public/collection/v1/departments
+//https://collectionapi.metmuseum.org/public/collection/v1/objects/[objectID]
 
     for (let id of ids) {
         const response = await fetch(`https://collectionapi.metmuseum.org/public/collection/v1/objects/${id}`);
         const artwork = await response.json();
-        
-        // Create HTML for each artwork
+        //https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement
         const artItem = document.createElement('div');
-        artItem.classList.add('art-item');
+        //https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML
         artItem.innerHTML = `
             <h3>${artwork.title}</h3>
-            <p><strong>Artist:</strong> ${artwork.artistDisplayName || 'Unknown'}</p>
-            <img src="${artwork.primaryImageSmall || '#'}" alt="${artwork.title}" width="100%">
+            <p>Artist:${artwork.artistDisplayName}</p>
+            <img src="${artwork.primaryImageSmall}" alt="${artwork.title}">
         `;
-
-        artworkList.appendChild(artItem);
+    artworkList.appendChild(artItem);
     }
 }
 
