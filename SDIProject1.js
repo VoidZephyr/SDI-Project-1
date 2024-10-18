@@ -1,4 +1,4 @@
-// app.js
+// SDIProject1.js
 
 // Search function to fetch artwork based on a search term
 async function searchArtwork(query) {
@@ -6,13 +6,12 @@ async function searchArtwork(query) {
     const data = await response.json();
 
     if (data.objectIDs) {
-        displayArtwork(data.objectIDs.slice(0, 10)); // Display the first 10 search results
+        displayArtwork(data.objectIDs.slice(0, 5)); // Display the first 5 search results like the first website we made
     } else {
-        alert("No artwork found. Please try a different search term.");
+        alert("No artwork found. Please try a different search term."); //if it isn't a word then throw an error
     }
 }
 
-// Function to display artworks on the page
 async function displayArtwork(ids) {
     const artworkList = document.getElementById('artwork-list');
     artworkList.innerHTML = '';  // Clear the current list before adding new results
