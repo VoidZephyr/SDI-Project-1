@@ -36,8 +36,8 @@ async function displayArtwork(ids) {
         artItem.innerHTML = `
             <h3>${artwork.title}</h3>
             <p>Artist:${artwork.artistDisplayName}</p>
-            <img src="${artwork.primaryImageSmall}" alt="${artwork.title}">
-        `;
+            <img src="${artwork.primaryImageSmall}" alt="${artwork.title}"> ` // alt="${artwork.title}" <--this will display the broken image if it doesn't load
+        ;
     artworkList.appendChild(artItem);
     }
 }
@@ -52,6 +52,16 @@ document.getElementById('search-button').addEventListener('click', function() {
     if (searchInput) {
         searchArtwork(searchInput);
     } else {
-        alert("Please enter a search term.");
+        alert("Enter something");
     }
-});
+})
+// add event listener for pressing "enter"
+// document.getElementById('search-input').addEventListener('keydown', function(event) {
+//     if(event.key === "Enter")
+//     const searchInput = document.getElementById('search-input').value;
+//     if (searchInput) {
+//         searchArtwork(searchInput);
+//     } else {
+//         alert("Enter something");
+//     }
+// });
