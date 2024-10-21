@@ -9,7 +9,7 @@ async function searchArtwork(query) {
         const response = await fetch(`https://collectionapi.metmuseum.org/public/collection/v1/search?q=${query}`);
         const data = await response.json();
 
-
+////https://collectionapi.metmuseum.org/public/collection/v1/objects/[objectID]
 if (data.objectIDs) {
     displayArtwork(data.objectIDs.slice(0, 5)); // Display the first 5 search results like the first website we made
 } else {
