@@ -11,7 +11,8 @@ async function searchArtwork(query) {
 
 ////https://collectionapi.metmuseum.org/public/collection/v1/objects/[objectID]
 if (data.objectIDs) {
-    displayArtwork(data.objectIDs.slice(0, 5)); // Display the first 5 search results like the first website we made
+    const resultCount = document.getElementById('result-count').value;
+    displayArtwork(data.objectIDs.slice(0, parseInt(resultCount))); // Display according to the number selected from the dropdown menu
 } else {
     alert("Try another word"); //if it isn't a word then throw an error
 }
