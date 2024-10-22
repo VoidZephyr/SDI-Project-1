@@ -65,5 +65,5 @@ document.getElementById('search-input').addEventListener('keydown', function(eve
     } else {
         alert("Enter something");
     }
-}
+    }
 });
