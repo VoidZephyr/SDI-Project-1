@@ -8,8 +8,6 @@ My application will be based on this https://www.metmuseum.org/art/collection
     It will be my own version of searching through the art studio.
 
 
-
-
 By completing this project, you will demonstrate that you are able to:
 
 Build a static webpage
