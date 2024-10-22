@@ -4,6 +4,12 @@ You will be using what you have learned over the past weeks to make a fully func
 API: https://metmuseum.github.io/
 Trello: https://trello.com/b/LBWoN1lJ/sdi-project-1
 
+My application will be based on this https://www.metmuseum.org/art/collection 
+    It will be my own version of searching through the art studio.
+
+
+
+
 By completing this project, you will demonstrate that you are able to:
 
 Build a static webpage
@@ -26,7 +32,7 @@ How to download the project
 How to run the project
 Any other directions needed to use your application
 Where should the user navigate to in their browser
-Bonus Content
+-----Bonus Content-----
 Should utilize classes that use private properties when applicable
 Utilize Postman to test APIs
 Expand the functionality of your page to provide additional details/games/supporting content.

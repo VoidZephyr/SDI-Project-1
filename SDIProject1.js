@@ -57,12 +57,13 @@ document.getElementById('search-button').addEventListener('click', function() {
     }
 })
 // add event listener for pressing "enter"
-// document.getElementById('search-input').addEventListener('keydown', function(event) {
-//     if(event.key === "Enter")
-//     const searchInput = document.getElementById('search-input').value;
-//     if (searchInput) {
-//         searchArtwork(searchInput);
-//     } else {
-//         alert("Enter something");
-//     }
-// });
+document.getElementById('search-input').addEventListener('keydown', function(event) {
+    if(event.key === "Enter"){
+            const searchInput = document.getElementById('search-input').value;
+    if (searchInput) {
+        searchArtwork(searchInput);
+    } else {
+        alert("Enter something");
+    }
+}
+});
